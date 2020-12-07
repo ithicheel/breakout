@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>BreakOut</title>
+</head>
+<body>
+    <img src="img.png" class="arrow" alt="error hha">
+    <!-- <div class="btns">
+        <button class="btn" onclick="soundPause()">Pause Audio</button>
+        <button class="btn" onclick="soundPlay()">Play Audio</button>
+    </div> -->
+    <audio class="audio" id="audio" controls autoplay>
+        <source src="Vexento - Lonely Dance.mp3"  type="audio/mpeg">
+    </audio>
+    <audio class="audio" id="audio1" controls autoplay>
+        <source src="ball.mp3"  type="audio/mpeg">
+    </audio>
+    <canvas id="canvas"></canvas>
+    <div class="high-score"><h3>BreakOut</h3></div>
+    <div class="reset">Дахин эхлэх</div>
+    <script src="app.js"></script>
+</body>
+</html>
