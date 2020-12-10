@@ -8,35 +8,28 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: #0e6655;
 }
-
+.cc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+}
 #canvas {
   background: #a9cce3;
-  border-radius: 10px;
-  position: absolute;
-  left: 55%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  border: 1px solid #9984d4;
 }
 .high-score {
-  position: absolute;
-  top: 2rem;
-  width: 86%;
-  left: 10%;
+  margin-bottom: 1rem;
   text-align: center;
 }
-.reset {
-  cursor: pointer;
-  position: absolute;
-  top: 90%;
-  left: 14%;
-  width: 80%;
-  text-align: center;
+.high-score h3 {
+  color: coral;
+  font-size: 2rem;
+}
+.high-score h3 span {
+  color: orange;
 }
 .arrow {
-  position: absolute;
-  top: 30%;
-  left: 5%;
+  width: 150px;
   /* margin: 6rem 1rem 1rem 1rem; */
 }
 .audio {
@@ -47,4 +40,17 @@ body {
   color: #111;
   padding: 0.2rem;
   cursor: pointer;
+}
+footer {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 1rem;
+}
+footer span {
+  color: coral;
+  font-weight: 600;
+}
+footer span span {
+  color: orange;
+  font-weight: 600;
 }

@@ -1,7 +1,6 @@
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 const scoreDisplay = document.querySelector(".high-score");
-const reset = document.querySelector(".reset");
 const audio = document.getElementById("audio");
 const audio1 = document.getElementById("audio1");
 const clr = "#1A5276"; 
@@ -16,7 +15,7 @@ document.addEventListener('keydown', keyDownHandler);
 document.addEventListener('keyup', keyUpHandler);
 
 // дахин эхлүүлэх хэсэг
-reset.addEventListener("click", function(){
+function reset(e){ 
     score = 0;
     heart = 3;
     ball.dx = speed;
@@ -25,8 +24,8 @@ reset.addEventListener("click", function(){
     ball.y = canvas.height - 50;
     generateBricks();
     gameType = true;
-    // audio.play();
-})
+   // audio.play();
+}
 
 // товч дарахад 
 function keyDownHandler(e){ 
@@ -34,6 +33,9 @@ function keyDownHandler(e){
         ridhtPressed = true;
     }else if (e.key == 'left' || e.key == 'ArrowLeft'){
         leftPressed = true;
+    }
+    if(e.key == 'Enter'){
+        reset();
     }
 }
 // товчоо дараад авахад
@@ -170,14 +172,16 @@ function endGame(finish){
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.font = '30px Arial';
         ctx.fillStyle = '#230c33';
-        ctx.fillText("Winner winner chicken dinner", canvas.width/2-140, canvas.height/2);
+        ctx.fillText("Winner winner chicken dinner", canvas.width/2-200, canvas.height/2);
         gameType = false;
     }else {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.font = '30px Arial';
         ctx.fillStyle = '#230c33';
+        ctx.fillText("Дахин эхлэх бол 'ENTER' дарна уу", canvas.width/2-200, canvas.height/2-70);
         ctx.fillText("Lose :(", canvas.width/2-40, canvas.height/2);
         audio.pause();
+        audio1.pause();
         gameType = false;
     }
 }
